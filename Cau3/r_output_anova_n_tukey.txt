@@ -1,0 +1,19 @@
+> anova_result <- aov(Satisfaction ~ Education, data = data)
+> summary(anova_result)
+            Df Sum Sq Mean Sq F value Pr(>F)  
+Education    2  7.879   3.939   3.925 0.0356 *
+Residuals   21 21.079   1.004                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> tukey_result <- TukeyHSD(anova_result)
+> tukey_result
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Satisfaction ~ Education, data = data)
+
+$Education
+                                       diff        lwr         upr     p adj
+Graduate degree-College graduate  1.0555556 -0.1715336  2.28264475 0.1003252
+Some college-College graduate    -0.3015873 -1.5742334  0.97105876 0.8230559
+Some college-Graduate degree     -1.3571429 -2.6641246 -0.05016107 0.0409193
